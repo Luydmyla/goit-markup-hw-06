@@ -23,6 +23,7 @@ html {
   --transition-duration: 250ms;
   --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --placeholder-text: rgba(117, 117, 117, 0.5);
+  --footer-background: #2f303a;
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -261,7 +262,7 @@ img {
   border-radius: 4px;
   padding: 10px 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  margin: auto;
+  margin: 0 auto;
   transition: background-color var(--transition-duration)
     var(--transition-timing-function);
 }
@@ -512,7 +513,7 @@ img {
 
 /* футер */
 .footer {
-  background-color: #2f303a;
+  background-color: var(--footer-background);
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -613,6 +614,60 @@ address {
   width: 206px;
   height: 80px;
   margin-top: 12px;
+  margin-right: 93px;
+}
+.footer-subscription {
+  /* display: flex; */
+  margin-top: 12px;
+  width: 570px;
+  height: 86px;
+  align-items: center;
+}
+.subscription-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--second-text-color);
+}
+.subscription-email {
+  display: flex;
+}
+.form-email {
+  width: 358px;
+  height: 50px;
+  margin-right: 12px;
+  padding: 0 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: var(--footer-background);
+}
+.subscription-button {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  background-color: var(--accent-color);
+  color: var(--second-text-color);
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+  padding: 10px 32px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color var(--transition-duration)
+    var(--transition-timing-function);
+}
+.icon-send {
+  margin-left: 10px;
+  background-color: var(--accent-color);
+  fill: var(--background-color);
 }
 
 /* ------МОДАЛЬНОЕ ОКНО---------- */
@@ -686,7 +741,12 @@ address {
   fill: #000000;
   /* transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
-.user-date-text {
+/* -----Форма для ввода даных пользователя */
+.modal {
+  padding: 40px;
+}
+.modal-form-text {
+  display: block;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
@@ -696,25 +756,36 @@ address {
 
   color: var(--title-text-color);
 }
-.user-contacts {
+.modal-form-field {
+  /* position: relative; */
+  left: 0;
   display: block;
+  margin-bottom: 10px;
 }
-.form-input {
+.modal-form-lable {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+  color: var(--primary-text-color);
+}
+.input-wrap {
+  display: block;
+  position: relative;
+}
+.modal-form-input {
   width: 100%;
   height: 40px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 12px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+  outline: none;
 }
-.comments-text {
-  width: 100%;
-  height: 120px;
-  resize: none;
-  padding: 10px 15px;
-}
-.comments-text::placeholder {
+.modal-form-input::placeholder {
   font-weight: 400;
   font-size: 12px;
   line-height: 1.16;
@@ -722,12 +793,81 @@ address {
 
   color: var(--placeholder-text);
 }
-.agriment {
+.modal-form-input:hover,
+.modal-form-input:focus {
+  border: 1px solid var(--accent-color);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.modal-form-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  margin-right: 12px;
+  transform: translateY(-50%);
+}
+.modal-comments {
+  width: 100%;
+  height: 120px;
+  resize: none;
+  padding: 12px 16px;
+  outline: none;
+  /* margin-bottom: 30px; */
+}
+.modal-comments::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  color: var(--placeholder-text);
+}
+.modal-comments:hover,
+.modal-comments:focus {
+  border: 1px solid var(--accent-color);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.modal-check-label {
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 24px;
-
   margin-bottom: 30px;
 }
+/* ------чекбокс через бефор */
+/* .modal-user-agreement::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 15px;
+  border-radius: 2px;
+  border: 2px solid var(--title-text-color);
+} */
+
+.icon-check {
+  width: 16px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 7px;
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
+}
+.modal-icon-check {
+  fill: var(--background-color);
+}
+
+.checkbox:checked + .modal-check-label > .icon-check {
+  background-color: var(--accent-color);
+  border: none;
+  border: transparent;
+}
+.agreement {
+  margin-left: 4px;
+}
+
 /*--------- стили для страницы портфолио--------------- */
 /* секция меню */
 .sections-title {

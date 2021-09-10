@@ -884,7 +884,8 @@ address {
   box-sizing: border-box;
   border-radius: 4px;
 }
-.modal-comments:hover .modal-check-label {
+.modal-comments:hover .modal-check-label,
+.modal-comments:focus .modal-check-label {
   display: flex;
   align-items: center;
   width: 100%;
@@ -922,7 +923,8 @@ address {
   display: block;
   fill: var(--background-color);
 }
-.checkbox:hover + .modal-check-label > .icon-check {
+.checkbox:hover + .modal-check-label > .icon-check,
+.checkbox:focus + .modal-check-label > .icon-check {
   border-color: var(--accent-color);
 }
 .checkbox:checked + .modal-check-label > .icon-check {
